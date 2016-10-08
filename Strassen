@@ -1,0 +1,28 @@
+package strassen;
+import java.util.Scanner;
+public class Strassen {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //a00 = ayy[0], a01 = ayy[1], a10 = ayy[2], a11 = ayy[3]
+        //b00 = bee[0], b01 = bee[1], b10 = bee[2], b11 = bee[3]
+        Scanner input = new Scanner(System.in);
+        int m1,m2,m3,m4,m5,m6,m7,c00,c01,c10,c11;
+        int[] ayy = new int[4];
+        int[] bee = new int[4];
+        
+        for (int i = 0; i < ayy.length; i++) ayy[i] = input.nextInt();
+        for (int b = 0; b < bee.length; b++) bee[b] = input.nextInt();
+        
+        m1 = ((ayy[0] + ayy[3]) * (bee[0] + bee[3]));
+        m2 = ((ayy[2] + ayy[3]) * bee[0]);
+        m3 = (ayy[0] * (bee[1] - bee[3]));
+        m4 = (ayy[3] * (bee[2] - bee[0]));
+        m5 = (ayy[0] + ayy[1] * bee[3]);
+        m6 = ((ayy[2] - ayy[0]) * (bee[0] + bee[1]));
+        m7 = ((ayy[1] - ayy[3]) * (bee[2] + bee[3]));
+    }
+    
+}
