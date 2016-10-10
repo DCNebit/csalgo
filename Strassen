@@ -1,4 +1,5 @@
 package strassen;
+
 import java.util.Scanner;
 public class Strassen {
 
@@ -13,8 +14,14 @@ public class Strassen {
         int[] ayy = new int[4];
         int[] bee = new int[4];
         
-        for (int i = 0; i < ayy.length; i++) ayy[i] = input.nextInt();
-        for (int b = 0; b < bee.length; b++) bee[b] = input.nextInt();
+        System.out.print("Input for A:");
+        for (int i = 0; i < ayy.length; i++){
+            ayy[i] = input.nextInt();
+        }
+        System.out.print("Input for B:");
+        for (int b = 0; b < bee.length; b++){
+            bee[b] = input.nextInt();
+        }
         
         m1 = ((ayy[0] + ayy[3]) * (bee[0] + bee[3]));
         m2 = ((ayy[2] + ayy[3]) * bee[0]);
@@ -23,6 +30,14 @@ public class Strassen {
         m5 = (ayy[0] + ayy[1] * bee[3]);
         m6 = ((ayy[2] - ayy[0]) * (bee[0] + bee[1]));
         m7 = ((ayy[1] - ayy[3]) * (bee[2] + bee[3]));
+        
+        c00 = m1 + m4 - m5 + m7;
+        c01 = m3 + m5;
+        c10 = m2 + m4;
+        c11 = m1 + m3 - m2 + m6;
+        
+        System.out.println("c00: " +c00 +"\t" +"c01: " +c01);
+        System.out.println("c10: " +c10 +"\t" +"c11: " +c11);
     }
     
 }
